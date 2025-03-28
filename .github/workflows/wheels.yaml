@@ -14,17 +14,23 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ "ubuntu-20.04", "macos-12" ]
+        os: [ "ubuntu-20.04", "ubuntu-20.04-arm", "macos-12" ]
         python: [ "3.9", "3.10", "3.11", "3.12" ]
-        platform: [ "x86_64" ]
+        platform: [ "x86_64", "aarch64" ]
         macos-target: [ "10.15" ]
         exclude:
           - os: "macos-12"
             platform: "i686"
+          - os: "macos-12"
+            platform: "aarch64"
+          - os: "ubuntu-20.04-arm"
+            platform: "x86_64"
         include:
           - os: "macos-12"
             os-name: "osx"
           - os: "ubuntu-20.04"
+            os-name: "focal"
+          - os: "ubuntu-20.04-arm"
             os-name: "focal"
     env:
       BUILD_COMMIT: 1.4b1
