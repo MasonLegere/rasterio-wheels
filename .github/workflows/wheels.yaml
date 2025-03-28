@@ -23,7 +23,7 @@ jobs:
             platform: "i686"
           - os: "macos-12"
             platform: "aarch64"
-          - os: "ubuntu-20.04-arm"
+          - os: "ubuntu-22.04-arm"
             platform: "x86_64"
           - os: "ubuntu-20.04"
             platform: "aarch64"
@@ -32,8 +32,8 @@ jobs:
             os-name: "osx"
           - os: "ubuntu-20.04"
             os-name: "focal"
-          - os: "ubuntu-20.04-arm"
-            os-name: "focal"
+          - os: "ubuntu-22.04-arm"
+            os-name: "jammy"
     env:
       BUILD_COMMIT: 1.4b1
       PLAT: "${{ matrix.platform }}"
