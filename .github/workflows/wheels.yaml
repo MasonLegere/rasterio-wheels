@@ -25,6 +25,8 @@ jobs:
             platform: "aarch64"
           - os: "ubuntu-20.04-arm"
             platform: "x86_64"
+          - os: "ubuntu-20.04"
+            platform: "aarch64"
         include:
           - os: "macos-12"
             os-name: "osx"
